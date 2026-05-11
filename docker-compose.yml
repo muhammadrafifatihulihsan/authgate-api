@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: authgate-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_kuat
+      MYSQL_DATABASE: authgate
+      MYSQL_USER: authgate_user
+      MYSQL_PASSWORD: authgate_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: authgate-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: authgate_user
+      DB_PASSWORD: authgate_password
+      DB_NAME: authgate
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysql_data:

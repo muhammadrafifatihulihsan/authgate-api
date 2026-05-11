@@ -1,0 +1,10 @@
+.env
+node_modules
+database.sqlite
+coverage
+.git
+.gitignore
+README.md
+tree.txt
+*.log
+setup_guide.md

@@ -1,0 +1,38 @@
+{
+	"name": "authgate-api",
+	"version": "1.0.0",
+	"description": "REST API backend Node.js + Express + MySQL dengan JWT autentikasi dan otorisasi (Access & Refresh Token)",
+	"main": "src/app.js",
+	"scripts": {
+		"start": "node src/app.js",
+		"dev": "nodemon src/app.js",
+		"seed": "node src/seeds/seedUsers.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"nodejs",
+		"express",
+		"mysql",
+		"jwt",
+		"authentication",
+		"rest-api"
+	],
+	"author": "rafiiee",
+	"license": "ISC",
+	"type": "commonjs",
+	"devDependencies": {
+		"nodemon": "^3.1.14"
+	},
+	"dependencies": {
+		"bcryptjs": "^3.0.3",
+		"cors": "^2.8.6",
+		"dotenv": "^17.4.2",
+		"express": "^5.2.1",
+		"helmet": "^8.1.0",
+		"jsonwebtoken": "^9.0.3",
+		"morgan": "^1.10.1",
+		"mysql2": "^3.22.3",
+		"swagger-jsdoc": "^6.2.8",
+		"swagger-ui-express": "^5.0.1"
+	}
+}
