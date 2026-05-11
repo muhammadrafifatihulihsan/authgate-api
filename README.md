@@ -412,11 +412,6 @@ Anda bisa menggunakan tools berikut untuk menguji API:
 ## 👨‍💻 Penulis
 
 **Muhammad Rafi Fatihul Ihsan**
-
 📧 muhammadrafifatihulihsan@gmail.com
 
 ---
-
-## 📄 Lisensi
-
-Proyek ini dilisensikan di bawah [ISC License](https://opensource.org/licenses/ISC).
